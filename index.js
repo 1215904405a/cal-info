@@ -9,6 +9,25 @@
 // const Router = require('koa-router');
 // const router = module.exports = new Router();
 // const app = new Koa();
+const cpuStat = require('cpu-stat');
+const osUtils = require('os-utils');
+
+ 
+const nei = 100*(osUtils.totalmem()-osUtils.freemem())/osUtils.totalmem();
+
+console.log("内存使用情况: %"+nei);
+
+cpuStat.usagePercent(function(err, percent, seconds) {
+
+     if (err) {
+
+          return console.log(err);
+
+    }
+
+    console.log("CPU使用情况: %"+percent);
+
+});
 
 const os = require('os');
 const nums = os.cpus().length;

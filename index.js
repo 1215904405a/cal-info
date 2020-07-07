@@ -1,5 +1,25 @@
 #!/usr/bin/env node
 
+const Koa = require('koa');
+const util = require('util');
+const path = require('path');
+const send = require('koa-send');
+const parser = require('koa-body');
+const axios = require('axios');
+const Router = require('koa-router');
+const router = module.exports = new Router();
+const app = new Koa();
+
+const os = require('os');
+const nums = os.cpus().length;
+console.log('内核数: ' + nums);
+console.log('操作系统的主机名：'+os.hostname());
+console.log("操作系统名："+os.type());
+console.log("返回操作系统名："+os.platform());
+console.log("系统 CPU 架构："+os.arch());
+console.log("CPU/内核的信息：");
+console.log(os.cpus());
+
 let port = process.argv[2];
 let apiPrefixs = process.argv[3];
 // let {exec} = require('child_process');
@@ -8,20 +28,10 @@ let apiPrefixs = process.argv[3];
 //     console.info(stdout);
 // });
 
-// let ownPath = process.argv[4] || '/';
+let ownPath = process.argv[4] || '/';
 let proxyPath = process.argv[5] || '/';
 
-// console.log(process.argv);
-
-const Koa = require('koa');
-const util = require('util');
-const path = require('path');
-const send = require('koa-send');
-const parser = require('koa-body');
-const Router = require('koa-router');
-const router = module.exports = new Router();
-
-const app = new Koa();
+// console.log(port, apiPrefixs, ownPath, proxyPath);
 
 // 识别内嵌浏览器
 app.use(async (ctx, next) => {
@@ -97,14 +107,14 @@ app.use(parser({
 
 // response
 app.use(ctx => {
-    ctx.cookies.set('username','lisa',{
-        domain:'192.168.0.100',
-        path:'/',   //cookie写入的路径
-        maxAge:1000*60,
-        // expires:new Date('2018-07-06'),
-        httpOnly:false,
-        overwrite:false
-    });
+    // ctx.cookies.set('username','lisa',{
+    //     domain:'',
+    //     path:'/',   //cookie写入的路径
+    //     maxAge:1000*60,
+    //     // expires:new Date('2018-07-06'),
+    //     httpOnly:false,
+    //     overwrite:false
+    // });
   ctx.body = {
     w: 'test',
     y: 'done',
@@ -119,9 +129,9 @@ app.use(ctx => {
 //     ctx.body = ctx.render('templates/login.html', captcha);
 // });
 
-app.listen(port, function () {
-    console.info(`http://${getIPAdress()}:${port}`);
-});
+// app.listen(port, function () {
+//     console.info(`http://${getIPAdress()}:${port}`);
+// });
 
 
 function getIPAdress() {

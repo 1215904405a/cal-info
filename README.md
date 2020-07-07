@@ -1,16 +1,10 @@
-# proxy-help
-Interface agent  主要用于前端静态小文件部署，跨域接口访问
+# hostinfo
+显示主机信息
 
-# 启动：
+# 安装：
 
-proxy-help port apiPrefixs ownPath proxyPath
+npm install hostinfo -g
 
-# 说明：
+# 用法：
 
-port：端口
-
-apiPrefixs：后端接口地址前缀（类似 /api）
-
-ownPath：本地地址类似（http://localhost:3000）
-
-proxyPath：接口地址（http://www.xxx:3000）
+hostinfo

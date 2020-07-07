@@ -4,7 +4,7 @@
     "email": "1215904405@qq.com"
   },
   "bin": {
-    "proxy-help": "index.js"
+    "hinfo": "index.js"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -19,7 +19,7 @@
   },
   "license": "ISC",
   "main": "index.js",
-  "name": "proxy-help",
+  "name": "hinfo",
   "scripts": {
     "test": "test"
   },

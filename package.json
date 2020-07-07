@@ -4,22 +4,18 @@
     "email": "1215904405@qq.com"
   },
   "bin": {
-    "hinfo": "index.js"
+    "cal-info": "index.js"
   },
   "dependencies": {
-    "axios": "^0.19.2",
-    "koa": "^2.12.0",
-    "koa-body": "^4.1.3",
-    "koa-router": "^9.0.1",
-    "koa-send": "^5.0.0"
+
   },
-  "description": "主要用于前端静态小文件部署，跨域接口访问",
+  "description": "host info",
   "devDependencies": {
     "@babel/core": "^7.4.5"
   },
   "license": "ISC",
   "main": "index.js",
-  "name": "hinfo",
+  "name": "cal-info",
   "scripts": {
     "test": "test"
   },

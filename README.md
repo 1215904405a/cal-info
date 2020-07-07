@@ -1,10 +1,10 @@
-# hostinfo
+# cal-info
 显示主机信息
 
 # 安装：
 
-npm install hostinfo -g
+npm install cal-info -g
 
 # 用法：
 
-hostinfo
+cal-info
